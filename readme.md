@@ -14,8 +14,12 @@ This sketch displays a moving cube that rotates  around one point.
 Using this sketch you can play, pause, speed up and slow down your music through simple hand gestures. The sketch uses the features of the MYO wristband to make that possible. Once the sketch is running and the MYO wristband connected, the music is controlled with the following gestures:
 
 SPREAD FINGERS -> Play music
+
 FIST -> Pause music
+
 WAVE IN -> Speed up music
+
 WAVE OUT -> Slow down music
+
 DOUBLE TAP -> Keep current pace
 
