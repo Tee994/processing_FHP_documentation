@@ -1,0 +1,22 @@
+/////////////////////////
+// Blue and orange triangles 
+//
+// This sketch displays orange triangles by moving the mouse. If you press the mouse the triangles change their colour into blue.
+////////////////////////
+
+
+void setup(){
+  size (480, 480);
+}
+
+void draw(){
+  
+  if (mousePressed) {
+    fill(0, 51, 153);
+  }
+  
+  else {
+    fill(255, 153, 51);
+  }
+  triangle(mouseX, mouseY, 40, 70, 60, 100);
+}
