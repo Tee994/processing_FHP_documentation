@@ -1,0 +1,68 @@
+///////////////////////////////////////
+// Colourful moving cube
+//
+// This sketch displays a moving cube that rotates around one point. 
+///////////////////////////////////////
+
+
+int cubeWidth = 15;
+int cubeHeight = 15;
+int cubeDepth = 15;
+int distance = 16;
+
+float t;
+
+void setup() {
+  size (800, 800, P3D);
+  background (0);
+  stroke (255);
+  strokeWeight (2);
+
+  colorMode (HSB, 100, 100, 100);
+}
+
+void draw() {
+  background(0);
+  translate (width/2, height/2, 600) ;
+
+  rotateX (radians(t));
+  rotateY (radians(t));
+
+  for (int x = 0; x <= distance; x = x + 2) {
+    for (int y = 0; y <= distance; y = y + 2) {
+      for (int z = 0; z <= distance; z = z + 2) {
+        stroke (x*5, 100, 100);
+
+        //X-AXIS
+        //line(x, y, z, x * cubeWidth, y * cubeWidth, z * cubeWidth);
+        line (x,             //x1
+              y,             //y1
+              z,             //z1
+              limiter(distance - x),  //x2
+              y,             //y2
+              z              //z2
+        );
+        line( x,             //x1
+              y,             //y1
+              z,             //z1
+              x,             //x2
+              limiter(distance - y),  //y2
+              z              //z2
+        );
+        line (x,             //x1
+              y,             //y1
+              z,             //z1
+              x,             //x2
+              y,             //y2
+              limiter(distance - z)//z2
+        );
+      }
+    }
+  }
+  t = t + 0.6;
+}
+
+
+float limiter(float t){
+  return t;
+}
